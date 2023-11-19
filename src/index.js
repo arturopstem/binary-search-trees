@@ -7,8 +7,9 @@ console.log(`odinArray: [${odinArray.join(', ')}]`);
 const odinTree = new Tree(odinArray);
 odinTree.print();
 
-/* --------------------------- Tie it all together -------------------------- */
 console.time('Driver Script');
+
+/* --------------------------- Tie it all together -------------------------- */
 // 1.
 const randomArray = randomNumbersArray(50);
 console.log('\nrandomArray:', randomArray);
