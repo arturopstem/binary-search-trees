@@ -235,13 +235,19 @@ class Tree {
     if (this.root == null) {
       return undefined;
     }
-    const left = this.height(this.root.left) || 0;
-    const right = this.height(this.root.right) || 0;
+    let left = 0;
+    let right = 0;
+    if (this.root.left) {
+      left = 1 + this.height(this.root.left);
+    }
+    if (this.root.right) {
+      right = 1 + this.height(this.root.right);
+    }
     return Math.abs(left - right) < 2;
   }
 
   rebalance() {
-    if (this.root != null && this.isBalanced() === false) {
+    if (this.root != null) {
       const sortedArr = this.inOrder();
       this.root = buildTree(sortedArr, 0, sortedArr.length - 1);
     }
